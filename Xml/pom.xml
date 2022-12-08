@@ -20,5 +20,10 @@
 			<artifactId>tomplot-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>me.wietlol.bitblock</groupId>
+			<artifactId>bitblock-core</artifactId>
+			<version>${bitblock.version}</version>
+		</dependency>
 	</dependencies>
 </project>

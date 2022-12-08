@@ -1,13 +1,13 @@
 package me.wietlol.tomplot.xml.writers
 
 import me.wietlol.tomplot.core.writers.TomplotStringBuilder
-import me.wietlol.tomplot.xml.data.XmlComment
-import me.wietlol.tomplot.xml.data.XmlDocument
-import me.wietlol.tomplot.xml.data.XmlElement
-import me.wietlol.tomplot.xml.data.XmlName
-import me.wietlol.tomplot.xml.data.XmlNode
-import me.wietlol.tomplot.xml.data.XmlProlog
-import me.wietlol.tomplot.xml.data.XmlTextElement
+import me.wietlol.tomplot.xml.data.models.XmlComment
+import me.wietlol.tomplot.xml.data.models.XmlDocument
+import me.wietlol.tomplot.xml.data.models.XmlElement
+import me.wietlol.tomplot.xml.data.models.XmlName
+import me.wietlol.tomplot.xml.data.models.XmlNode
+import me.wietlol.tomplot.xml.data.models.XmlProlog
+import me.wietlol.tomplot.xml.data.models.XmlTextElement
 
 class XmlStringBuilder(
 	options: XmlWriterOptions,

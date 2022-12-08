@@ -1,14 +1,14 @@
-package me.wietlol.tomplot.xml.data
+package me.wietlol.tomplot.xml.data.models
 
 class XmlAttributeSet : Collection<Pair<XmlName, String>>
 {
 	override var size: Int = 0
 		private set
 	
-	val data: MutableMap<XmlName, MutableList<String>> = hashMapOf()
+	private val data: MutableMap<XmlName, MutableList<String>> = hashMapOf()
 	
 	operator fun set(name: String, namespace: String?, value: String) =
-		set(XmlName(name, namespace), value)
+		set(DefaultXmlName(name, namespace), value)
 	
 	operator fun set(name: XmlName, value: String)
 	{
@@ -31,7 +31,7 @@ class XmlAttributeSet : Collection<Pair<XmlName, String>>
 		add(entry)
 	
 	fun add(entry: Triple<String, String, String?>) =
-		add(XmlName(entry.first, entry.third), entry.second)
+		add(DefaultXmlName(entry.first, entry.third), entry.second)
 	
 	@JvmName("addRaw")
 	fun add(entry: Pair<String, String>) =
@@ -41,7 +41,7 @@ class XmlAttributeSet : Collection<Pair<XmlName, String>>
 		add(entry.first, entry.second)
 	
 	fun add(name: String, value: String, namespace: String? = null) =
-		add(XmlName(name, namespace), value)
+		add(DefaultXmlName(name, namespace), value)
 	
 	fun add(name: XmlName, value: String)
 	{
@@ -50,13 +50,13 @@ class XmlAttributeSet : Collection<Pair<XmlName, String>>
 	}
 	
 	operator fun get(name: String, namespace: String?): List<String>? =
-		data[XmlName(name, namespace)]
+		data[DefaultXmlName(name, namespace)]
 	
 	operator fun get(name: XmlName): List<String>? =
 		data[name]
 	
 	fun getFirst(name: String, namespace: String?): String? =
-		getFirst(XmlName(name, namespace))
+		getFirst(DefaultXmlName(name, namespace))
 	
 	fun getFirst(name: XmlName): String? =
 		get(name)?.firstOrNull()
@@ -65,7 +65,7 @@ class XmlAttributeSet : Collection<Pair<XmlName, String>>
 	{
 		@JvmName("ofRaw")
 		fun of(vararg values: Pair<String, String>): XmlAttributeSet =
-			of(*values.map { XmlName(it.first) to it.second }.toTypedArray())
+			of(*values.map { DefaultXmlName(it.first) to it.second }.toTypedArray())
 		
 		fun of(vararg values: Pair<XmlName, String>): XmlAttributeSet =
 			XmlAttributeSet().apply {
@@ -86,4 +86,17 @@ class XmlAttributeSet : Collection<Pair<XmlName, String>>
 	
 	override fun contains(element: Pair<XmlName, String>): Boolean =
 		data[element.first].isNullOrEmpty().not()
+	
+	fun duplicate(): XmlAttributeSet
+	{
+		val newSet = XmlAttributeSet()
+		forEach { newSet.add(it) }
+		return newSet
+	}
+	
+	fun toJsonString(): String
+	{
+		// todo
+		return "{}"
+	}
 }

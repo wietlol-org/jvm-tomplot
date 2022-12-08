@@ -1,7 +1,7 @@
 package me.wietlol.tomplot.xml.writers
 
 import me.wietlol.tomplot.api.writers.TomplotWriter
-import me.wietlol.tomplot.xml.data.XmlDocument
+import me.wietlol.tomplot.xml.data.models.XmlDocument
 
 class XmlStringWriter(
 	val options: XmlWriterOptions,

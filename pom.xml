@@ -30,6 +30,7 @@
 		
 		<utils.version>1.0.2</utils.version>
 		<unit-test.version>1.0.0-SNAPSHOT</unit-test.version>
+		<bitblock.version>1.0.0-SNAPSHOT</bitblock.version>
 	</properties>
 	
 	<dependencies>

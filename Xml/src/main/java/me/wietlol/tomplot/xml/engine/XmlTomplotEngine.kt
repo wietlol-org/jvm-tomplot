@@ -4,10 +4,11 @@ import me.wietlol.tomplot.api.engine.TomplotEngine
 import me.wietlol.tomplot.api.writers.TomplotWriter
 import me.wietlol.tomplot.xml.builders.XmlDocumentBuilder
 import me.wietlol.tomplot.xml.builders.XmlNodeBuilder
-import me.wietlol.tomplot.xml.data.XmlAttributeSet
-import me.wietlol.tomplot.xml.data.XmlDocument
-import me.wietlol.tomplot.xml.data.XmlName
-import me.wietlol.tomplot.xml.data.XmlNodeElement
+import me.wietlol.tomplot.xml.data.models.XmlAttributeSet
+import me.wietlol.tomplot.xml.data.models.DefaultXmlName
+import me.wietlol.tomplot.xml.data.models.XmlDocument
+import me.wietlol.tomplot.xml.data.models.XmlName
+import me.wietlol.tomplot.xml.data.models.XmlNodeElement
 
 class XmlTomplotEngine<O>(
 	override val writer: TomplotWriter<XmlDocument, O>
@@ -20,7 +21,7 @@ class XmlTomplotEngine<O>(
 		children: MutableList<XmlNodeElement> = mutableListOf(),
 		body: XmlDocumentBuilder.() -> Unit
 	): XmlDocument =
-		xmlDocument(XmlName(name, namespace), attributes, children, body)
+		xmlDocument(DefaultXmlName(name, namespace), attributes, children, body)
 	
 	fun xmlDocument(
 		name: XmlName,
