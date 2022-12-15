@@ -12,6 +12,7 @@
 	<modules>
 		<module>Api</module>
 		<module>Core</module>
+		<module>Kotlin</module>
 		<module>Xml</module>
 	</modules>
 	

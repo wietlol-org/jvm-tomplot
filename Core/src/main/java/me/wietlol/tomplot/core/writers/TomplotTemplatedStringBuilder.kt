@@ -9,9 +9,9 @@ class TomplotTemplatedStringBuilder(
 	{
 		fun ofOptions(
 			commentPrefix: String,
+			oldOutput: String?,
 			newLine: String = "\n",
 			indent: String = "\t",
-			oldOutput: String?,
 		) = TomplotTemplatedStringBuilder(TomplotTemplatedStringBuilderOptions(commentPrefix, newLine, indent), oldOutput)
 	}
 	
