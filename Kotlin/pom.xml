@@ -25,5 +25,11 @@
 			<artifactId>bitblock-core</artifactId>
 			<version>${bitblock.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>me.wietlol.bitblock</groupId>
+			<artifactId>bitblock-code-generator</artifactId>
+			<version>${bitblock.version}</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>
