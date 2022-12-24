@@ -53,41 +53,7 @@ class KotlinStringBuilder(
 		) = KotlinStringBuilder(KotlinWriterOptions(newLine, indent), oldOutput)
 	}
 	
-	private val builder = TomplotTemplatedStringBuilder.ofOptions("//", null, options.newLine, options.indent)
-	private val data: MutableMap<String, String>
-	private val customCodeMap: Map<String, List<String>>
-	
-	init
-	{
-		val customCodeMap = mutableMapOf<String, List<String>>()
-		var isCustomCode = false
-		var customCodeList = mutableListOf<String>()
-		oldOutput?.lines()?.forEach {
-			when
-			{
-				it.trim().startsWith("// @tomplot:customCode:start:") ->
-				{
-					customCodeList = mutableListOf()
-					val id = it.replace("// @tomplot:customCode:start:", "").trim()
-					customCodeMap[id] = customCodeList
-					isCustomCode = true
-				}
-				
-				it.trim().startsWith("// @tomplot:customCode:end") ->
-				{
-					isCustomCode = false
-				}
-				
-				isCustomCode ->
-				{
-					customCodeList.add(it)
-				}
-			}
-		}
-		this.customCodeMap = customCodeMap
-		
-		data = oldOutput?.lines()?.asSequence()?.filter { it.startsWith("// data: ") }?.map { it.replace("// data: ", "") }?.map { it.split(":", limit = 2) }?.map { it[0] to it[1] }?.toMap(HashMap()) ?: mutableMapOf()
-	}
+	private val builder = TomplotTemplatedStringBuilder.ofOptions("//", oldOutput, options.newLine, options.indent)
 	
 	fun append(element: KtElement): KotlinStringBuilder
 	{

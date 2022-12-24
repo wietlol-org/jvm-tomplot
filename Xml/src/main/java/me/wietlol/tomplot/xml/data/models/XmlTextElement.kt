@@ -1,4 +1,4 @@
-// hash: #d7525ded
+// hash: #b7be0201
 // data: serializationKey:40f7c5b8-6b07-4f81-b095-bf650c82a0cf
 // @formatter:off
 
@@ -23,7 +23,7 @@ interface XmlTextElement : BitSerializable, XmlNodeElement, Jsonable
 	companion object
 	{
 		val serializationKey: UUID
-			get() = UUID.fromString("serializationKey")
+			get() = UUID.fromString("40f7c5b8-6b07-4f81-b095-bf650c82a0cf")
 	}
 	
 	override val serializationKey: UUID

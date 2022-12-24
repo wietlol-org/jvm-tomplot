@@ -1,4 +1,4 @@
-// hash: #75df140d
+// hash: #87f88094
 // data: serializationKey:a75b0183-2b09-4b0e-a95b-94da610ce4c4
 // @formatter:off
 
@@ -23,7 +23,7 @@ interface KtIntegerLiteralExpression : BitSerializable, KtExpression, Jsonable
 	companion object
 	{
 		val serializationKey: UUID
-			get() = UUID.fromString("serializationKey")
+			get() = UUID.fromString("a75b0183-2b09-4b0e-a95b-94da610ce4c4")
 	}
 	
 	override val serializationKey: UUID

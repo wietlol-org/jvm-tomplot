@@ -1,4 +1,4 @@
-// hash: #6099d7dd
+// hash: #27e35c0f
 // data: serializationKey:be27544b-e9aa-47c7-9045-036c5be1151c
 // @formatter:off
 
@@ -23,7 +23,7 @@ interface KtStarGenericTypeArgument : BitSerializable, KtGenericTypeArgument, Js
 	companion object
 	{
 		val serializationKey: UUID
-			get() = UUID.fromString("serializationKey")
+			get() = UUID.fromString("be27544b-e9aa-47c7-9045-036c5be1151c")
 	}
 	
 	override val serializationKey: UUID

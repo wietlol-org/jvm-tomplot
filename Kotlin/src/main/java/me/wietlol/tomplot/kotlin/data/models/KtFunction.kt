@@ -1,4 +1,4 @@
-// hash: #f0a012ca
+// hash: #10c0915b
 // data: serializationKey:fab4e238-d609-458d-a3bc-c6e2787a7cc0
 // @formatter:off
 
@@ -23,7 +23,7 @@ interface KtFunction : BitSerializable, KtComponent, KtInterfaceMember, KtObject
 	companion object
 	{
 		val serializationKey: UUID
-			get() = UUID.fromString("serializationKey")
+			get() = UUID.fromString("fab4e238-d609-458d-a3bc-c6e2787a7cc0")
 	}
 	
 	override val serializationKey: UUID

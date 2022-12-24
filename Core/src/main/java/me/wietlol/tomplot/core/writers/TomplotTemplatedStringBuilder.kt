@@ -16,8 +16,8 @@ class TomplotTemplatedStringBuilder(
 	}
 	
 	val commentPrefix: String = options.commentPrefix
-	private val data: MutableMap<String, String>
-	private val customCodeMap: Map<String, List<String>>
+	val data: MutableMap<String, String>
+	val customCodeMap: Map<String, List<String>>
 	
 	init
 	{

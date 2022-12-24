@@ -1,4 +1,4 @@
-// hash: #c198ec79
+// hash: #ef191b25
 // data: serializationKey:0057c7db-8c9a-42e0-9ef5-53031dc1484d
 // @formatter:off
 
@@ -23,7 +23,7 @@ interface XmlProlog : BitSerializable, XmlHeader, Jsonable
 	companion object
 	{
 		val serializationKey: UUID
-			get() = UUID.fromString("serializationKey")
+			get() = UUID.fromString("0057c7db-8c9a-42e0-9ef5-53031dc1484d")
 	}
 	
 	override val serializationKey: UUID
