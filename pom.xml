@@ -12,7 +12,10 @@
 	<modules>
 		<module>Api</module>
 		<module>Core</module>
+		<module>Css</module>
+		<module>Html</module>
 		<module>Kotlin</module>
+		<module>Pdf</module>
 		<module>Xml</module>
 	</modules>
 	
@@ -32,6 +35,10 @@
 		<utils.version>1.0.2</utils.version>
 		<unit-test.version>1.0.0-SNAPSHOT</unit-test.version>
 		<bitblock.version>1.0.0-SNAPSHOT</bitblock.version>
+
+		<flyingsaucer.version>9.1.20</flyingsaucer.version>
+		<openhtml.version>1.0.10</openhtml.version>
+		<jsoup.version>1.17.1</jsoup.version>
 	</properties>
 	
 	<dependencies>

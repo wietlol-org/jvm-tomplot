@@ -1,0 +1,66 @@
+
+@Module("TomplotCss")
+@Owner("Wietlol")
+@Version("1.0")
+
+@Root("../../../../../java")
+
+@RootPackage("tomplot.css.data")
+@BuilderPackage(".builders")
+@ModelPackage(".models")
+@SerializerPackage(".serializers")
+
+;
+
+@Import("tomplot.api.data.TomplotElement")
+contract CssElement : TomplotElement {
+}
+
+blueprint CssStyle : CssElement {
+	property(1) properties: List<CssProperty>
+}
+
+blueprint CssProperty : CssElement {
+	property(1) name: String
+	property(2) value: CssValue
+}
+
+contract CssValue : CssElement {
+}
+
+
+
+contract XmlHeader : XmlElement {
+}
+
+contract XmlNodeElement : XmlElement {
+}
+
+blueprint XmlComment : XmlHeader, XmlNodeElement {
+	property(1) text: String
+}
+
+blueprint XmlDocument : XmlElement {
+	property(1) headers: List<XmlHeader>
+	property(2) root: XmlNode
+}
+
+blueprint XmlName : XmlElement {
+	property(1) name: String
+	property(2) namespace: String? = null
+}
+
+blueprint XmlNode : XmlNodeElement {
+	property(1) name: XmlName
+	property(2) attributes: XmlAttributeSet
+	property(3) children: List<XmlNodeElement>
+}
+
+blueprint XmlProlog : XmlHeader {
+	property(1) name: String
+	property(2) attributes: XmlAttributeSet
+}
+
+blueprint XmlTextElement : XmlNodeElement {
+	property(1) text: String
+}
